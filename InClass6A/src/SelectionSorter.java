@@ -8,6 +8,10 @@ public class SelectionSorter
       Sorts an array, using selection sort.
       @param a the array to sort
      */
+    public static long cCount = 0;
+    public static void resetcCount() {cCount = 0;}
+    public static void cCountInc()   {cCount++;}
+    public static long getcCount() {return cCount;}
     public static void sort(int[] a)
     {  
         for (int i = 0; i < a.length - 1; i++)
@@ -29,6 +33,7 @@ public class SelectionSorter
         int minPos = from;
         for (int i = from + 1; i < a.length; i++)
         {
+            cCountInc();
             if (a[i] < a[minPos]) { minPos = i; }
         }
         return minPos;
